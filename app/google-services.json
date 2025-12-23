@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "747183919956",
+    "project_id": "cine-sphere-3d2b5",
+    "storage_bucket": "cine-sphere-3d2b5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747183919956:android:757e1ae68e4e492d406ec1",
+        "android_client_info": {
+          "package_name": "com.example.cinesphere"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBckQRCns5FjdFBZl5jyidnw_OJXi8NEtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
