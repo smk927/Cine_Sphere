@@ -9,7 +9,7 @@ CineSphere is a modern Android application that allows users to explore movies, 
 *   **Media Details:** View detailed information including overview, cast, and watch providers (OTT platforms).
 *   **Nearby Cinemas:** Find movie theaters near your current location using Google Maps integration.
 *   **Wishlist:** Save your favorite movies to a local wishlist.
-*   **Trivia:** (Feature in development) Participate in movie trivia.
+*   **Trivia:** Participate in movie trivia.
 *   **Authentication:** User authentication via Firebase.
 
 ## Technologies Used
@@ -75,7 +75,3 @@ buildConfigField("String", "API_KEY", "\"YOUR_TMDB_API_KEY_HERE\"")
 3.  Sync the project with Gradle files.
 4.  Ensure you have added your API keys as described above.
 5.  Run the application on an emulator or a physical device.
-
-## License
-
-[Add License Here, e.g., MIT, Apache 2.0]
