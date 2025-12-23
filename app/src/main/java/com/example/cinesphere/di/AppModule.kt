@@ -66,7 +66,7 @@ object AppModule {
     fun provideCinemaRepository(
         client: OkHttpClient
     ): CinemaRepository {
-        return CinemaRepositoryImpl(client, "AIzaSyC9ZYtarbUJvilzUE2WZF0QYPGuwlRUSlY")
+        return CinemaRepositoryImpl(client, "PLACE_YOUR_TMDB_API_HERE")
     }
 
     @Provides
