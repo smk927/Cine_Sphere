@@ -66,7 +66,7 @@ object AppModule {
     fun provideCinemaRepository(
         client: OkHttpClient
     ): CinemaRepository {
-        return CinemaRepositoryImpl(client, "PLACE_YOUR_TMDB_API_HERE")
+        return CinemaRepositoryImpl(client, "YOUR_GOOGLE_MAPS_API_KEY")
     }
 
     @Provides

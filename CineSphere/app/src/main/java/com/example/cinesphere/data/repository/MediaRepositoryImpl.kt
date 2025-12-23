@@ -26,50 +26,50 @@ class MediaRepositoryImpl @Inject constructor(
         val movieGenres = getMovieGenres()
         val tvGenres = getTvGenres()
         val allGenres = movieGenres + tvGenres
-        return movieApi.search(apiKey = "f64a54a25c92303f318b34ed2548db4f", query = query, page = page).results.map { it.toMedia(allGenres) }
+        return movieApi.search(apiKey = "YOUR_API_KEY", query = query, page = page).results.map { it.toMedia(allGenres) }
     }
 
     override suspend fun getPopularMedia(page: Int, mediaType: MediaType): List<Media> {
         return when (mediaType) {
             MediaType.MOVIE -> {
                 val genres = getMovieGenres()
-                movieApi.getPopularMovies(apiKey = "f64a54a25c92303f318b34ed2548db4f", page = page).results.map { it.toMovie(genres) }
+                movieApi.getPopularMovies(apiKey = "YOUR_API_KEY", page = page).results.map { it.toMovie(genres) }
             }
             MediaType.WEB_SERIES -> {
                 val genres = getTvGenres()
-                movieApi.getPopularWebSeries(apiKey = "f64a54a25c92303f318b34ed2548db4f", page = page).results.map { it.toWebSeries(genres) }
+                movieApi.getPopularWebSeries(apiKey = "YOUR_API_KEY", page = page).results.map { it.toWebSeries(genres) }
             }
         }
     }
 
     override suspend fun getTrendingMedia(): List<Media> {
         val genres = getMovieGenres()
-        return movieApi.getTrendingMovies(apiKey = "f64a54a25c92303f318b34ed2548db4f").results.map { it.toMovie(genres) }
+        return movieApi.getTrendingMovies(apiKey = "YOUR_API_KEY").results.map { it.toMovie(genres) }
     }
 
     override suspend fun getMoviesByGenre(genreId: Int): List<Media> {
         val genres = getMovieGenres()
-        return movieApi.getMoviesByGenre(apiKey = "f64a54a25c92303f318b34ed2548db4f", genreId = genreId).results.map { it.toMovie(genres) }
+        return movieApi.getMoviesByGenre(apiKey = "YOUR_API_KEY", genreId = genreId).results.map { it.toMovie(genres) }
     }
 
     override suspend fun getMovieGenres(): List<Genre> {
         if (movieGenres.isEmpty()) {
-            movieGenres = movieApi.getMovieGenres(apiKey = "f64a54a25c92303f318b34ed2548db4f").genres.map { it.toGenre() }
+            movieGenres = movieApi.getMovieGenres(apiKey = "YOUR_API_KEY").genres.map { it.toGenre() }
         }
         return movieGenres
     }
 
     override suspend fun getTvGenres(): List<Genre> {
         if (tvGenres.isEmpty()) {
-            tvGenres = movieApi.getTvGenres(apiKey = "f64a54a25c92303f318b34ed2548db4f").genres.map { it.toGenre() }
+            tvGenres = movieApi.getTvGenres(apiKey = "YOUR_API_KEY").genres.map { it.toGenre() }
         }
         return tvGenres
     }
 
     override suspend fun getMediaDetails(mediaId: Int, mediaType: MediaType): Media {
         return when (mediaType) {
-            MediaType.MOVIE -> movieApi.getMovieDetails(movieId = mediaId, apiKey = "f64a54a25c92303f318b34ed2548db4f").toMovie(getMovieGenres())
-            MediaType.WEB_SERIES -> movieApi.getWebSeriesDetails(tvId = mediaId, apiKey = "f64a54a25c92303f318b34ed2548db4f").toWebSeries(getTvGenres())
+            MediaType.MOVIE -> movieApi.getMovieDetails(movieId = mediaId, apiKey = "YOUR_API_KEY").toMovie(getMovieGenres())
+            MediaType.WEB_SERIES -> movieApi.getWebSeriesDetails(tvId = mediaId, apiKey = "YOUR_API_KEY").toWebSeries(getTvGenres())
         }
     }
 
